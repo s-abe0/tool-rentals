@@ -9,12 +9,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * The Tool entity models the details of a tool, and has a many-to-one relation with
+ * a single Price entity, which declares the price data for the specific toolType.
+ * 
+ * The toolCode must be a unique identifier.
+ */
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tool {
 	

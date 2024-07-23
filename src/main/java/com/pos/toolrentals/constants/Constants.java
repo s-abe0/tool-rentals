@@ -7,6 +7,5 @@ public class Constants {
 	public static final String DISCOUNT_NEGATIVE_ERROR = "Discount cannot be negative";
 	public static final String DISCOUNT_TOO_LARGE_ERROR = "Discount cannot exceed 100";
 	public static final String INVALID_TOOL_CODE_ERROR = "Tool code must be 4 characters";
-	public static final String METHOD_ARGUMENT_ERROR = "Invalid request parameter received";
-	public static final String INVALID_CHECKOUT_DATE_ERROR = "Checkout date cannot be in the future";
+	public static final String INVALID_CHECKOUT_DATE_ERROR = "Invalid checkout date received - Date must valid and be in yyyyMMdd format";
 }
