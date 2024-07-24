@@ -144,7 +144,7 @@ class ToolRentalsControllerTest {
 	void testInvalidDiscount_max() throws Exception {
 		String toolCode = "LADW";
 		String rentalDays = "3";
-		String discount = "1000";
+		String discount = "101";
 		String checkoutDate = "20200702";
 		
 		when(service.checkout(anyString(), anyInt(), any(LocalDate.class), anyInt())).thenReturn(new RentalAgreement());
