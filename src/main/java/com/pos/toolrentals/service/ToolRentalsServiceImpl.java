@@ -53,7 +53,6 @@ public class ToolRentalsServiceImpl implements ToolRentalsService {
 	private RentalAgreement generateRentalAgreement(Tool tool, int rentalDays, LocalDate checkoutDate, int discount) {
 		RentalAgreement agreement = new RentalAgreement();
 		Price price = tool.getPrice();
-		System.out.println(tool);
 		int chargeDays = calculateChargeDays(price, rentalDays, checkoutDate);
 		
 		double preDiscountCharge = chargeDays * price.getDailyCharge();
