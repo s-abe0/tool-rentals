@@ -11,9 +11,12 @@ name: Java CI with Maven
 on: push
 
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+    - name: List directory
+      run: ls -al
