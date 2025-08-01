@@ -8,7 +8,7 @@ on:
       - 'release*'
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +22,5 @@ jobs:
 
     - name: Run maven
       run: mvn -B clean package
-
-    - name: List output
-      run: ls target
 
     
