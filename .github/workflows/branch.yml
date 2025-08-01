@@ -20,10 +20,7 @@ jobs:
         distribution: temurin
         java-version: 17
 
-    - name: Build
-      run: mvn -B clean package -DskipTests
-
-    - name: Test
-      run: mvn -B test
+    - name: Run maven
+      run: mvn -B clean package
 
     
