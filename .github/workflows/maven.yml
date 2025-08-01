@@ -10,6 +10,9 @@ name: Java CI with Maven
 
 on: push
 
+env:
+  USER_NAME: user-name
+
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -19,4 +22,6 @@ jobs:
       uses: actions/checkout@v4
 
     - name: List directory
-      run: ls -al
+      run: | 
+        echo "User name $USER_NAME"
+        ls -al
