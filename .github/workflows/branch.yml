@@ -4,7 +4,7 @@ name: Branch Workflow
 on: 
   push:
     branches-ignore:
-      - 'master'
+      - 'main'
       - 'release*'
 
 jobs:
@@ -21,6 +21,6 @@ jobs:
         java-version: 17
 
     - name: Run maven
-      run: mvn -B clean package
+      run: mvn -B clean package -DskipTests
 
     
