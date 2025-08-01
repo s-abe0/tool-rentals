@@ -1,0 +1,26 @@
+
+name: Branch Workflow
+
+on: 
+  push:
+    branches-ignore:
+      - 'master'
+      - 'release*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 17
+
+    - name: Run maven
+      run: mvn -B clean package
+
+    
