@@ -4,8 +4,7 @@ name: Main Workflow
 on: push
 
 jobs:
-  build-and-test:
-    name: Build, Test and Deploy to Github Packages
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,10 +18,12 @@ jobs:
 
       - name: Maven deploy
         run: mvn -B clean deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   docker:
     runs-on: ubuntu-latest
-    needs: [build-and-test]
+    needs: [deploy]
     env:
       DOCKER_REPO: citc31/tool-rentals
 
