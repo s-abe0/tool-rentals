@@ -1,0 +1,24 @@
+
+name: Branch Workflow
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+      - 'release*'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: corretto
+          java-version: 17
+
+      - name: Maven verify
+        run: mvn -B clean verify
