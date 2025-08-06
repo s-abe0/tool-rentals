@@ -8,7 +8,7 @@ WORKDIR /app
 RUN mvn clean package "-Dmaven.test.skip=true"
 
 # Copy the jar from the build container and run it
-FROM openjdk:17-jdk-alpine
+FROM amazoncorretto:17-alpine-jdk
 
 COPY --from=build /app/target/tool-rentals-service.jar /app/
 WORKDIR /app
