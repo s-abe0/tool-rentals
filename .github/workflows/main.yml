@@ -5,6 +5,7 @@ on: push
 
 jobs:
   build-and-test:
+    name: Build, Test and Deploy to Github Packages
     runs-on: ubuntu-latest
 
     steps:
@@ -16,8 +17,8 @@ jobs:
           distribution: corretto
           java-version: 17
 
-      - name: Maven verify
-        run: mvn -B clean verify
+      - name: Maven deploy
+        run: mvn -B clean deploy
 
   docker:
     runs-on: ubuntu-latest
@@ -27,7 +28,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Dockerhub login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
 
