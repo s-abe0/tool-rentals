@@ -17,10 +17,10 @@ jobs:
     - name: Setup JDK
       uses: actions/setup-java@v4
       with:
-        distribution: temurin
+        distribution: corretto
         java-version: 17
 
-    - name: Run maven
-      run: mvn -B clean package
+    - name: Maven verify
+      run: mvn -B clean verify
 
     
