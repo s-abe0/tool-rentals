@@ -4,12 +4,12 @@ name: Main Workflow
 on: push
 
 jobs:
-  deploy:
+  publish-artifact:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-      
+
     steps:
       - uses: actions/checkout@v4
 
@@ -24,9 +24,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  docker:
+  publish-docker:
     runs-on: ubuntu-latest
-    needs: [deploy]
+    needs: [publish-artifact]
     env:
       DOCKER_REPO: citc31/tool-rentals
 
