@@ -26,6 +26,8 @@ jobs:
       DOCKER_REPO: citc31/tool-rentals
 
     steps:
+      - uses: actions/checkout@v4
+      
       - name: Dockerhub login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
 
