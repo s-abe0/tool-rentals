@@ -9,10 +9,11 @@
 	</parent>
 	<groupId>com.pos</groupId>
 	<artifactId>tool-rentals</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${revision}</version>
 	<name>tool-rentals</name>
 	<description>Spring Boot Application which allows managing tool rentals</description>
 	<properties>
+		<revision>1.0.0</revision>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -135,4 +136,11 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>s-abe0</name>
+			<url>https://maven.pkg.github.com/s-abe0/tool-rentals</url>
+		</repository>
+	</distributionManagement>
 </project>
