@@ -1,10 +1,7 @@
 
 name: Main Workflow
 
-on:
-  push:
-    branches:
-      - 'main'
+on: push
 
 jobs:
   build-and-test:
@@ -27,7 +24,7 @@ jobs:
     needs: [build-and-test]
     env:
       DOCKER_REPO: citc31/tool-rentals
-      
+
     steps:
       - name: Dockerhub login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
