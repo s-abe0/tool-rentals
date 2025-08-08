@@ -3,7 +3,7 @@ Description: Stack for creating the tool rentals service in ECS Fargate
 Resources:
 
   ###########################################
-  #             VPC Configuration           #
+  #             VPC Configuration test          #
   ###########################################
   VPC:
     Type: AWS::EC2::VPC
