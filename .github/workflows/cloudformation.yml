@@ -1,0 +1,27 @@
+
+name: Cloudformation Workflow
+
+on:
+  push:
+    # branches:
+    #   - 'main'
+    paths:
+      - 'tool-rentals-infra.yml'
+
+permissions:
+  id-token: write
+jobs:
+  deploy_cloudformation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@main
+        with:
+          role-to-assume: arn:aws:iam::867344460703:role/ToolRentals-GithubRole
+          aws-region: us-east-1
+
+      - name: Deploy cloudformation stack
+        run: aws cloudformation deploy --template-file tool-rentals-infra.yml --stack-name tool-rentals-stack
+
