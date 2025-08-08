@@ -11,5 +11,5 @@ FROM amazoncorretto:17-alpine-jdk
 
 COPY --from=build /app/target/tool-rentals-service.jar /app/
 WORKDIR /app
-
+RUN echo "Hello World"
 ENTRYPOINT ["java","-jar","tool-rentals-service.jar"]
