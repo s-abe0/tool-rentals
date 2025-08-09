@@ -23,5 +23,5 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy cloudformation stack
-        run: aws cloudformation deploy --template-file tool-rentals-infra.yml --stack-name tool-rentals-stack
+        run: aws cloudformation deploy --template-file tool-rentals-infra.yml --stack-name tool-rentals-stack --capabilities CAPABILITY_IAM
 
