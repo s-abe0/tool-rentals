@@ -19,7 +19,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@main
         with:
-          role-to-assume: #
+          role-to-assume: ${{ secrets.AWS_GITHUB_ROLE }}
           aws-region: us-east-1
 
       - name: Deploy cloudformation stack
